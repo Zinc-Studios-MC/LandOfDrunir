@@ -1,5 +1,6 @@
 package net.zinc.landofrdrunir;
 
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -10,6 +11,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.zinc.landofrdrunir.entity.client.stoneling.StonelingRenderer;
+import net.zinc.landofrdrunir.registry.LODEntities;
+import net.zinc.landofrdrunir.registry.LODItems;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(LandOfDrunir.MOD_ID)
@@ -21,6 +25,9 @@ public class LandOfDrunir
     public LandOfDrunir(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
+
+        LODItems.ITEMS.register(modEventBus);
+        LODEntities.ENTITIES.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -52,6 +59,7 @@ public class LandOfDrunir
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            EntityRenderers.register(LODEntities.STONELING.get(), StonelingRenderer::new);
         }
     }
 }
