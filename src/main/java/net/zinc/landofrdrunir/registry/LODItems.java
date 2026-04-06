@@ -12,5 +12,12 @@ public class LODItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, LandOfDrunir.MOD_ID);
 
     public static RegistryObject<Item> STONELING_SPAWN_EGG = ITEMS.register("stoneling_spawn_egg",
-            ()-> new ForgeSpawnEggItem(LODEntities.STONELING, 0x7A7A7A, 0x4E7F3A, new Item.Properties()));
+            ()-> new ForgeSpawnEggItem(LODEntities.STONELING, 0x7A7A7A, 0x5F9A4A, new Item.Properties()));
+    public static RegistryObject<Item> DEER_SPAWN_EGG = ITEMS.register("deer_spawn_egg",
+            ()-> new ForgeSpawnEggItem(LODEntities.DEER, 0x6B4423, 0xD8C4A8, new Item.Properties()));
+
+    public static RegistryObject<Item> ANTLERS = ITEMS.register("deer_antlers", ()-> new Item(new Item.Properties()));
+    public static RegistryObject<Item> FLORA_ANTLERS = ITEMS.register("flora_deer_antlers", ()-> new Item(new Item.Properties()));
+    public static RegistryObject<Item> RAW_DEER_MEAT = ITEMS.register("raw_deer_meat", ()-> new Item(new Item.Properties()));
+    public static RegistryObject<Item> COOKED_DEER_MEAT = ITEMS.register("cooked_dear_meat", ()-> new Item(new Item.Properties()));
 }

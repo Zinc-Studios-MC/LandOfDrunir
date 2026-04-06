@@ -6,10 +6,13 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zinc.landofrdrunir.LandOfDrunir;
+import net.zinc.landofrdrunir.entity.server.custom.deer.Deer;
 import net.zinc.landofrdrunir.entity.server.custom.stoneling.StonelingEntity;
 
 public class LODEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, LandOfDrunir.MOD_ID);
     public static RegistryObject<EntityType<StonelingEntity>> STONELING = ENTITIES.register("stoneling",
             ()-> EntityType.Builder.of(StonelingEntity::new, MobCategory.AMBIENT).sized(1.25f, 0.75f).build("stoneling"));
+    public static RegistryObject<EntityType<Deer>> DEER = ENTITIES.register("deer",
+            ()-> EntityType.Builder.of(Deer::new, MobCategory.AMBIENT).sized(1f, 1.5f).build("deer"));
 }

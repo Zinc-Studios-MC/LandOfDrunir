@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.zinc.landofrdrunir.entity.client.deer.DeerRenderer;
 import net.zinc.landofrdrunir.entity.client.stoneling.StonelingRenderer;
 import net.zinc.landofrdrunir.registry.LODEntities;
 import net.zinc.landofrdrunir.registry.LODItems;
@@ -60,6 +61,7 @@ public class LandOfDrunir
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(LODEntities.STONELING.get(), StonelingRenderer::new);
+            EntityRenderers.register(LODEntities.DEER.get(), DeerRenderer::new);
         }
     }
 }
